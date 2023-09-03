@@ -1,58 +1,20 @@
 <template>
-  <BaseLayout>
-    <template #navbar>
-      <BaseNavbar
-        class="border-b gap-4 backdrop-blur-md bg-base-100/50 sticky top-0 z-10"
-      >
-        <router-link to="/" class="flex-0 text-4xl pr-2 select-none">
-          <img
-            v-once
-            src="/bq-40x40.svg"
-            alt=""
-            class="h-10 hover:drop-shadow-lg hover:cursor-pointer"
-          />
-        </router-link>
-        <div class="flex-1 gap-2 relative">
-          <input
-            v-model="search"
-            class="input rounded-full w-full bg-transparent"
-            type="text"
-            placeholder="Cari Surat Apa?"
-          />
-          <button
-            class="btn btn-xs absolute right-2 btn-circle"
-            v-if="search"
-            @click="clearSearch"
-          >
-            <Icon width="16" icon="iconamoon:close" />
-          </button>
-        </div>
-      </BaseNavbar>
-    </template>
-    <div class="flex flex-col gap-3">
-      <Suspense>
-        <ListSurah :search="search" />
-        <template #fallback>
-          <Skeletor v-for="i in 10" :key="i" width="full" height="76" />
-        </template>
-      </Suspense>
-    </div>
-  </BaseLayout>
+  <div class="flex flex-col gap-3">
+    <Suspense>
+      <ListSurah v-once :search="storeSurah.search" />
+      <template #fallback>
+        <Skeletor v-for="i in 10" :key="i" width="full" height="76" />
+      </template>
+    </Suspense>
+  </div>
 </template>
 
 <script setup lang="ts">
-import BaseLayout from "@/components/BaseLayout.vue";
-import BaseNavbar from "@/components/BaseNavbar.vue";
 import ListSurah from "@/components/ListSurah.vue";
 import { Skeletor } from "vue-skeletor";
-import { ref } from "vue";
-import { Icon } from "@iconify/vue";
+import { useSurah } from "@/store/storeSurah";
 
-const search = ref<String>("");
-
-function clearSearch() {
-  search.value = "";
-}
+const storeSurah = useSurah();
 </script>
 
 <style>

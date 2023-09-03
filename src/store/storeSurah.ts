@@ -5,6 +5,7 @@ import { ref } from "vue";
 export const useSurah = defineStore("surah", () => {
   const surah = ref<ISurah>();
   const navigation = ref<ISurahNavigator>();
+  const search = ref<string>("");
 
   function setSurah(data: ISurah) {
     surah.value = data;
@@ -14,5 +15,9 @@ export const useSurah = defineStore("surah", () => {
     navigation.value = data;
   }
 
-  return { surah, navigation, setSurah, setNavigation };
+  function setSearch(name: string) {
+    search.value = name;
+  }
+
+  return { surah, search, navigation, setSurah, setSearch, setNavigation };
 });

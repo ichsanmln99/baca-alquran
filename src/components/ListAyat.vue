@@ -24,7 +24,7 @@ const route = useRoute();
 const storeSurah = useSurah();
 const detailSurah = ref<IDetailSurah>();
 
-const idSurah = computed(() => route.params.id.toString());
+const idSurah = computed(() => route.params.id as string);
 
 await getDetailSurah(idSurah.value);
 setSurahToState();
