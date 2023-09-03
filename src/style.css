@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "lpmq";
+    src: url("/lpmq.woff") format("woff"), url("/lpmq.ttf") format("truetype");
+    display: swap;
+  }
+
+  html {
+    font-family: "Rubik", system-ui, sans-serif;
+  }
+}
