@@ -19,8 +19,8 @@ export default defineConfig({
       },
       includeAssets: ["favicon.ico", "apple-touch-icon.png"],
       manifest: {
-        name: "Bacalah Quran",
-        short_name: "BACALAHQURAN",
+        name: "baca-alquran.com",
+        short_name: "Baca Al-Quran",
         description: "Baca Al-Quran Berbahasa Indonesia",
         theme_color: "#FBF7F5",
         display: "standalone",
