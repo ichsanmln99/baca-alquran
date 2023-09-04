@@ -13,8 +13,19 @@
 import ListSurah from "@/components/ListSurah.vue";
 import { Skeletor } from "vue-skeletor";
 import { useSurah } from "@/store/storeSurah";
+import { useHead } from "@vueuse/head";
 
 const storeSurah = useSurah();
+
+useHead({
+  title: `Baca Al-Quran`,
+  meta: [
+    {
+      name: `Baca Al-Quran Berbahasa Indonesia`,
+      content: `Baca Al-Quran Online Berbahasa Indonesia, gratis tanpa iklan`,
+    },
+  ],
+});
 </script>
 
 <style>

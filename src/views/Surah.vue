@@ -31,7 +31,7 @@ useHead({
   meta: [
     {
       name: `Surah ${storeSurah.surah?.namaLatin} (${storeSurah.surah?.arti})`,
-      content: `Baca ${storeSurah.surah?.namaLatin} di baca-alquran.com`,
+      content: `Baca Surah ${storeSurah.surah?.namaLatin} di baca-alquran.com. Al-Quran Online Berbahasa Indonesia, gratis tanpa iklan`,
     },
   ],
 });
