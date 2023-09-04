@@ -16,7 +16,7 @@
 import ListAyat from "@/components/ListAyat.vue";
 import { useRoute } from "vue-router";
 import { useSurah } from "@/store/storeSurah";
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent, watch } from "vue";
 import { useHead } from "@vueuse/head";
 
 const SurahNavigation = defineAsyncComponent(
@@ -26,15 +26,20 @@ const SurahNavigation = defineAsyncComponent(
 const storeSurah = useSurah();
 const route = useRoute();
 
-useHead({
-  title: `Surah ${storeSurah.surah?.namaLatin} | Baca Al-Quran`,
-  meta: [
-    {
-      name: `Surah ${storeSurah.surah?.namaLatin} (${storeSurah.surah?.arti})`,
-      content: `Baca Surah ${storeSurah.surah?.namaLatin} di baca-alquran.com. Al-Quran Online Berbahasa Indonesia, gratis tanpa iklan`,
-    },
-  ],
-});
+watch(
+  () => storeSurah.surah,
+  () => {
+    useHead({
+      title: `Surah ${storeSurah.surah?.namaLatin} | Baca Al-Quran`,
+      meta: [
+        {
+          name: `Surah ${storeSurah.surah?.namaLatin} (${storeSurah.surah?.arti})`,
+          content: `Baca Surah ${storeSurah.surah?.namaLatin} di baca-alquran.com. Al-Quran Online Berbahasa Indonesia, gratis tanpa iklan`,
+        },
+      ],
+    });
+  }
+);
 </script>
 
 <style>
