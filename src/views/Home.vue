@@ -1,7 +1,10 @@
 <template>
-  <div class="flex flex-col gap-3">
+  <div>
     <Suspense>
-      <ListSurah v-once :search="storeSurah.search" />
+      <div class="flex flex-col gap-3">
+        <RecentSurah v-show="!storeSurah.search"></RecentSurah>
+        <ListSurah :search="storeSurah.search" />
+      </div>
       <template #fallback>
         <Skeletor v-for="i in 10" :key="i" width="full" height="76" />
       </template>
@@ -11,6 +14,7 @@
 
 <script setup lang="ts">
 import ListSurah from "@/components/ListSurah.vue";
+import RecentSurah from "@/components/RecentSurah.vue";
 import { Skeletor } from "vue-skeletor";
 import { useSurah } from "@/store/storeSurah";
 import { useHead } from "@vueuse/head";

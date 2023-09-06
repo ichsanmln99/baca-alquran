@@ -6,7 +6,7 @@
       <span>{{ ayat.nomorAyat }}</span>
     </div>
     <div class="text-right">
-      <div class="font-arabic leading-loose text-3xl my-6 hover:text-primary">
+      <div class="font-arabic leading-loose text-4xl my-6 hover:text-primary">
         {{ ayat.teksArab }}
       </div>
     </div>

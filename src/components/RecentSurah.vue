@@ -1,9 +1,11 @@
 <template>
-  <template :key="id" v-if="recentSurah">
+  <div :key="id" v-if="recentSurah">
     <span class="text-sm text-neutral/50">Terakhir dibaca</span>
-    <CardSurah :surah="recentSurah" />
+    <div class="my-3">
+      <CardSurah :surah="recentSurah" />
+    </div>
     <div class="border-b"></div>
-  </template>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -11,14 +13,12 @@ import Surah from "@/api/Surah";
 import CardSurah from "@/components/CardSurah.vue";
 import { ISurah } from "@/api/Surah.interface";
 import { useStorage } from "@vueuse/core";
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
 
 const recentSurah = ref<ISurah>();
 const id = useStorage("recentSurah", "", localStorage);
 
-onMounted(() => {
-  getDetailSurah(id.value);
-});
+await getDetailSurah(id.value);
 
 function getDetailSurah(id: string) {
   return Surah.get(id).then((data) => {

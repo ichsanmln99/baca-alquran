@@ -6,8 +6,9 @@
 
 @layer base {
   @font-face {
-    font-family: "lpmq";
-    src: url("/lpmq.woff") format("woff"), url("/lpmq.ttf") format("truetype");
+    font-family: "alqalam";
+    src: url("/al_qalam_quran_majeed.woff") format("woff"),
+      url("/al_qalam_quran_majeed.woff2") format("woff");
     display: swap;
   }
 

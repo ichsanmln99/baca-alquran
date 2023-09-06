@@ -6,7 +6,7 @@ export default {
   theme: {
     fontFamily: {
       rubik: ["Rubik", "sans-serif"],
-      arabic: ["lpmq"],
+      arabic: ["alqalam"],
     },
     extend: {
       fontFamily: {

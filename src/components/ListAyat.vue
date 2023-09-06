@@ -5,7 +5,7 @@
   >
     بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
   </div>
-  <div class="gap-4 flex flex-col divide-y">
+  <div class="gap-4 flex flex-col divide-y min-h-screen">
     <template v-for="ayat in detailSurah?.ayat" :key="ayat.nomor">
       <CardAyat :ayat="ayat"></CardAyat>
     </template>

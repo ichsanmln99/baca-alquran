@@ -5,9 +5,7 @@
     </template>
 
     <router-view v-slot="{ Component }">
-      <!-- <keep-alive :exclude="['Surah']"> -->
       <component :is="Component" />
-      <!-- </keep-alive> -->
     </router-view>
   </BaseLayout>
 

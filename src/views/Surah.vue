@@ -3,6 +3,7 @@
     <div>
       <SurahNavigation></SurahNavigation>
       <ListAyat></ListAyat>
+      <SurahNavigation class="mt-12"></SurahNavigation>
     </div>
     <template #fallback>
       <div class="flex">
