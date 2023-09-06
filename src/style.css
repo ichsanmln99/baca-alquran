@@ -8,7 +8,8 @@
   @font-face {
     font-family: "alqalam";
     src: url("/al_qalam_quran_majeed.woff") format("woff"),
-      url("/al_qalam_quran_majeed.woff2") format("woff");
+      url("/al_qalam_quran_majeed.woff2") format("woff"),
+      url("/al_qalam_quran_majeed.ttf") format("truetype");
     display: swap;
   }
 
