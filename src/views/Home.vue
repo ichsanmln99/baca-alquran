@@ -6,7 +6,9 @@
         <ListSurah :search="storeSurah.search" />
       </div>
       <template #fallback>
-        <Skeletor v-for="i in 10" :key="i" width="full" height="76" />
+        <div class="flex flex-col gap-3">
+          <Skeletor v-for="i in 10" :key="i" width="full" height="76" />
+        </div>
       </template>
     </Suspense>
   </div>

@@ -18,7 +18,9 @@ import { ref } from "vue";
 const recentSurah = ref<ISurah>();
 const id = useStorage("recentSurah", "", localStorage);
 
-await getDetailSurah(id.value);
+if (id.value) {
+  await getDetailSurah(id.value);
+}
 
 function getDetailSurah(id: string) {
   return Surah.get(id).then((data) => {

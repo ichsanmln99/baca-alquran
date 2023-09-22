@@ -1,27 +1,27 @@
 type ApiResponse<T> = {
-  code: Number;
-  message: String;
+  code: number;
+  message: string;
   data: T;
 };
 
 export interface ISurah {
-  nomor: Number;
-  nama: String;
-  namaLatin: String;
-  jumlahAyat: Number;
-  tempatTurun?: String;
-  arti?: String;
-  deskripsi?: String;
+  nomor: number;
+  nama: string;
+  namaLatin: string;
+  jumlahAyat: number;
+  tempatTurun?: string;
+  arti?: string;
+  deskripsi?: string;
   audioFull?: { [key: string]: string };
 }
 
 export interface IListSurahResponse extends ApiResponse<ISurah[]> {}
 
 export interface IAyat {
-  nomorAyat: Number;
-  teksArab: String;
-  teksLatin: String;
-  teksIndonesia: String;
+  nomorAyat: number;
+  teksArab: string;
+  teksLatin: string;
+  teksIndonesia: string;
   audio: { [key: string]: string };
 }
 
