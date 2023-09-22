@@ -6,8 +6,22 @@
       >
         <span>{{ ayat.nomorAyat }}</span>
       </div>
-      <div class="flex gap-1 items-center" v-if="isAudioActive">
-        <div>
+      <div class="flex gap-1 items-center">
+        <template v-if="!isAudioActive">
+          <button
+            @click="storeSurah.setActiveAudio(ayat.nomorAyat, ayat.audio['05'])"
+            class="btn btn-sm btn-circle"
+          >
+            <Icon icon="iconamoon:player-play-fill"></Icon>
+          </button>
+        </template>
+        <template v-else>
+          <button
+            @click="storeSurah.unsetActiveAudio"
+            class="btn btn-sm btn-circle"
+          >
+            <Icon icon="iconamoon:player-stop-fill"></Icon>
+          </button>
           <template v-if="isPaused">
             <button
               @click="storeSurah.playActiveAudio"
@@ -24,20 +38,11 @@
               <Icon icon="iconamoon:player-pause-fill"></Icon>
             </button>
           </template>
-        </div>
-        <button
-          @click="storeSurah.unsetActiveAudio"
-          class="btn btn-sm btn-circle"
-        >
-          <Icon icon="iconamoon:close-bold"></Icon>
-        </button>
+        </template>
       </div>
     </div>
     <div class="text-right">
-      <div
-        @click="storeSurah.setActiveAudio(ayat.nomorAyat, ayat.audio['05'])"
-        class="font-arabic leading-loose text-4xl my-6 hover:text-primary cursor-pointer"
-      >
+      <div class="font-arabic leading-loose text-4xl my-6">
         {{ ayat.teksArab }}
       </div>
     </div>

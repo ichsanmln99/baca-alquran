@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="detailSurah?.nomor !== 1 && detailSurah?.nomor !== 9"
-    class="font-arabic text-center text-2xl p-4 hover:text-primary"
+    class="font-arabic text-center text-2xl p-4"
   >
     بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
   </div>

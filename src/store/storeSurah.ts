@@ -38,9 +38,8 @@ export const useSurah = defineStore("surah", () => {
       activeAudio.value.audio = new Audio(audioUrl);
       activeAudio.value.audio.play();
 
-      activeAudio.value.audio.addEventListener(
-        "ended",
-        () => (activeAudio.value.isPaused = true)
+      activeAudio.value.audio.addEventListener("ended", () =>
+        unsetActiveAudio()
       );
     }
   }
